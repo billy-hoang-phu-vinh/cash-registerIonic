@@ -6,10 +6,16 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
+
+  
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'manager',
+    loadChildren: () => import('./manager/manager.module').then( m => m.ManagerPageModule)
   },
 ];
 
