@@ -14,124 +14,152 @@
   </ion-header>
   <ion-content class="ion-padding">
     <ion-grid>
-       
-      <ion-row id="row" >
+
+      <ion-row id="row">
         <ion-col size-md="12">
           <ion-label size="large">
-            <h1> Type </h1>
+            <h1> Type <span style="color: red;">{{selectedItem.name}}</span></h1>
           </ion-label>
+         
         </ion-col>
       </ion-row>
 
-      <ion-row id="row2" >
+      <ion-row id="row2">
         <ion-col size-sm="12">
-          
-          <ion-row id="rowNumber"size-sm="12">
 
-            <ion-col size="3" >
-              <ion-button shape="round"style="--background:#DCDCDC;--color:black" id="number" fill="solid" size="large">
-                  1
-            </ion-button>
-            </ion-col>
-            
+          <ion-row id="rowNumber" size-sm="12">
+
             <ion-col size="3">
-              <ion-button shape="round"style="--background:#DCDCDC;--color:black" id="number" fill="solid" size="large">
-                  2
-            </ion-button>
+              <ion-button (click)="pickNumber($event)" shape="round" style="--background:#DCDCDC;--color:black" id="number" fill="solid"
+                size="large">
+                1
+              </ion-button>
+            </ion-col>
+
+            <ion-col size="3">
+              <ion-button (click)="pickNumber($event)" shape="round" style="--background:#DCDCDC;--color:black" id="number" fill="solid"
+                size="large">
+                2
+              </ion-button>
             </ion-col>
             <ion-col size="3">
-              <ion-button shape="round"style="--background:#DCDCDC;--color:black" id="number" fill="solid" size="large">
-                  3
-            </ion-button>
+              <ion-button (click)="pickNumber($event)" shape="round" style="--background:#DCDCDC;--color:black" id="number" fill="solid"
+                size="large">
+                3
+              </ion-button>
             </ion-col>
             <ion-col size="3">
-              <ion-button shape="round"style="--background:#DCDCDC;--color:black" id="number" fill="solid" size="large">
-                  Total
-            </ion-button>
+              <ion-button shape="round" style="--background:#DCDCDC;--color:black" id="number" fill="solid"
+                size="large">
+                {{total}}
+              </ion-button>
             </ion-col>
           </ion-row>
 
           <ion-row id="rowNumber2" size-sm="12">
 
-            <ion-col size="9" >
+            <ion-col size="9">
 
               <ion-row>
-                <ion-col size="4" >
-                  <ion-button shape="round"style="--background:#DCDCDC;--color:black" id="number" fill="solid" size="large">
-                      4
-                </ion-button>
+                <ion-col size="4">
+                  <ion-button (click)="pickNumber($event)" shape="round" style="--background:#DCDCDC;--color:black" id="number" fill="solid"
+                    size="large">
+                    4
+                  </ion-button>
                 </ion-col>
-                <ion-col size="4" >
-                  <ion-button shape="round"style="--background:#DCDCDC;--color:black" id="number" fill="solid" size="large">
-                      5
-                </ion-button>
+                <ion-col size="4">
+                  <ion-button (click)="pickNumber($event)" shape="round" style="--background:#DCDCDC;--color:black" id="number" fill="solid"
+                    size="large">
+                    5
+                  </ion-button>
                 </ion-col>
-                <ion-col size="4" >
-                  <ion-button shape="round"style="--background:#DCDCDC;--color:black" id="number" fill="solid" size="large">
-                      6
-                </ion-button>
+                <ion-col (click)="pickNumber($event)" size="4">
+                  <ion-button shape="round" style="--background:#DCDCDC;--color:black" id="number" fill="solid"
+                    size="large">
+                    6
+                  </ion-button>
                 </ion-col>
-                
+
               </ion-row>
               <ion-row>
-                <ion-col size="4" >
-                  <ion-button shape="round"style="--background:#DCDCDC;--color:black" id="number" fill="solid" size="large">
-                      7
-                </ion-button>
+                <ion-col (click)="pickNumber($event)" size="4">
+                  <ion-button shape="round" style="--background:#DCDCDC;--color:black" id="number" fill="solid"
+                    size="large">
+                    7
+                  </ion-button>
                 </ion-col>
-                <ion-col size="4" >
-                  <ion-button shape="round"style="--background:#DCDCDC;--color:black" id="number" fill="solid" size="large">
-                      8
-                </ion-button>
+                <ion-col size="4">
+                  <ion-button (click)="pickNumber($event)" shape="round" style="--background:#DCDCDC;--color:black" id="number" fill="solid"
+                    size="large">
+                    8
+                  </ion-button>
                 </ion-col>
-                <ion-col size="4" >
-                  <ion-button shape="round"style="--background:#DCDCDC;--color:black" id="number" fill="solid" size="large">
-                      9
-                </ion-button>
+                <ion-col size="4">
+                  <ion-button (click)="pickNumber($event)" shape="round" style="--background:#DCDCDC;--color:black" id="number" fill="solid"
+                    size="large">
+                    9
+                  </ion-button>
                 </ion-col>
               </ion-row>
               <ion-row>
-                <ion-col size="4" offset="4">
-                  <ion-button  shape="round"style="--background:#DCDCDC;--color:black" id="number" fill="solid" size="large">
-                      0
-                </ion-button>
+                <ion-col (click)="pickNumber($event)" size="4" offset="4">
+                  <ion-button shape="round" style="--background:#DCDCDC;--color:black" id="number" fill="solid"
+                    size="large">
+                    0
+                  </ion-button>
                 </ion-col>
-                
+
               </ion-row>
             </ion-col>
-            
+
             <ion-col size="3">
-              <ion-button expand="full" shape="round" style="--border-radius:25px;--background:blue;--color:black" id="buy" fill="solid" size="large">
-                  Buy
-                  
-            </ion-button>
+              <ion-button (click)="buyItem($event)" expand="full" shape="round" style="--border-radius:25px;--background:blue;--color:black"
+                id="buy" fill="solid" size="large">
+                Buy
+
+              </ion-button>
             </ion-col>
-            
+
           </ion-row>
 
 
         </ion-col>
       </ion-row>
 
-      <ion-row id="row3" >
+      <ion-row id="row3">
         <ion-col size-md="12">
           <ion-label size="large">
-            <h1> Quantity </h1>
+            <h1> {{selectedQuantity}} </h1>
           </ion-label>
         </ion-col>
       </ion-row>
 
-      <ion-row id="row4" >
-        <ion-col size-md="12">
-          <ion-label size="large">
-            <h1> List here </h1>
-          </ion-label>
+      <ion-row id="row4" size="12">
+        <ion-col size="12">
+          <ion-list id="expenses-list">
+            <ion-item button *ngFor="let item of itemList" >
+              
+              <ion-col size="8" (click)="pickItem(item)">
+                <ion-label>
+                  {{item.name}}
+                </ion-label>
+              </ion-col>
+              <ion-col size="2" offset="2">
+                <ion-label>
+                  {{item.quantity}}
+                </ion-label>
+              </ion-col>
+              
+              
+            </ion-item>
+          </ion-list>
         </ion-col>
+       
       </ion-row>
 
     </ion-grid>
 
-    
+
   </ion-content>
-  
+
 </ion-content>
