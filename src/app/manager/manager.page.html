@@ -1,9 +1,50 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>manager</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Manager Page</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  {{itemList}}
+  <div id="container" style="padding-top: 300px;">
+    
+    
+  
+
+
+    <ion-grid>
+      <ion-row>
+        <ion-col offset="4">
+          <ion-button (click)="navigateHistory($event)" style="--background:#DCDCDC;--color:black" id="number" fill="solid"
+          size="large">
+          History
+        </ion-button>
+        </ion-col>
+        
+      </ion-row>
+
+      <ion-row>
+        <ion-col offset="4">
+          <ion-button (click)="restock($event)" style="--background:#DCDCDC;--color:black" id="number" fill="solid"
+          size="large">
+          Restock
+        </ion-button>
+        </ion-col>
+        
+      </ion-row>
+
+      <ion-row>
+        <ion-col offset="3">
+          <ion-button (click)="addproduct($event)" style="--background:#DCDCDC;--color:black" id="number" fill="solid"
+          size="large">
+          Add new product
+        </ion-button>
+        </ion-col>
+        
+      </ion-row>
+      
+    </ion-grid>
+  </div>
 </ion-content>

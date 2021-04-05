@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { HomeService } from '../home/home.service';
 import { Item } from '../models/item.model';
@@ -12,10 +13,18 @@ export class ManagerPage implements OnInit {
 
   itemList: Item[];//empty
 
-  constructor(private homeServiceImport: HomeService,public alertController: AlertController) {}
+  constructor(private routes:Router) {}
   ngOnInit() {
-  this.itemList=this.homeServiceImport.getAllItems();
-  console.log(this.itemList)
+
   }
 
+  navigateHistory(){
+    this.routes.navigate(['history'])
+  }
+  restock(){
+    this.routes.navigate(['restock'])
+  }
+  addproduct(){
+    this.routes.navigate(['addnewproduct'])
+  }
 }

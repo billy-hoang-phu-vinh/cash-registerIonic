@@ -22,11 +22,5 @@ import { AlertController } from '@ionic/angular';
   declarations: [ManagerPage]
 })
 export class ManagerPageModule {
-  itemList: Item[];//empty
-
-  constructor(private homeServiceImport: HomeService,public alertController: AlertController) {}
-  ngOnInit() {
-  this.itemList=this.homeServiceImport.getAllItems();
-  console.log(this.itemList)
-  }
+  
 }

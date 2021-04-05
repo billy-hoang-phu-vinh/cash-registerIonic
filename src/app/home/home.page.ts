@@ -20,7 +20,7 @@ export class HomePage {
 
   constructor(private routes:Router,private homeServiceImport: HomeService,public alertController: AlertController) {}
   ngOnInit() {
-    this.selectedItem={name:"",quantity:0}
+    this.selectedItem={name:"",quantity:0,price:0}
     this.selectedQuantity="Quantity";
     this.total="Total";
     this.itemList = this.homeServiceImport.getAllItems();
@@ -54,7 +54,7 @@ export class HomePage {
         
       } else {
         this.selectedQuantity += n.target.innerText
-        var num = parseInt(this.selectedQuantity) * this.selectedItem.quantity
+        var num = parseInt(this.selectedQuantity) * this.selectedItem.price
         this.total = ""+num
       }
 
@@ -93,6 +93,12 @@ export class HomePage {
   }
   nagivateManager(e){
     this.routes.navigate(['manager'])
+  }
+  navigateRestock(e){
+    this.routes.navigate(['restock'])
+  }
+  navigateAdd(e){
+    this.routes.navigate(['addnewproduct'])
   }
 
 }

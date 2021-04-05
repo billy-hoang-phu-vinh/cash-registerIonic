@@ -14,34 +14,69 @@ import { Item } from "../models/item.model";
     public itemList: Item[] = [
       {
           name:'Pants',
-          quantity:20
+          quantity:20,
+          price:50.7
       },
       {
         name:'Shoes',
-        quantity:50
+        quantity:50,
+        price:90
+
     },
     {
         name:'Hats',
-        quantity:10
+        quantity:10,
+        price:50.7
+
     },
     {
         name:'Tshirts',
-        quantity:10
+        quantity:10,
+        price:30
+
     },
     {
         name:'Dresses',
-        quantity:24
+        quantity:24,
+        price:45
+
     }
      ];
+     public itemHistory: Item[]=[]
+
+     
      getAllItems(){
       return [...this.itemList];
      }
+     getAllItemHistory(){
+        return [...this.itemHistory];
+       }
      //only one-> find/ many = filter
-     getRecipe(Name){
+     getItem(Name){
       return {...this.itemList.find(i=>{return i.name===Name}) }
      }
+     restock(itemElement){
+        const item = this.getItem(itemElement.name)
+        let pos = this.itemList.findIndex(i=>i.name===itemElement.name)
+        this.itemList.splice(pos, 1)
+        this.itemList.push({
+            name:item.name,
+            quantity: itemElement.quantity,
+            price:item.price
+
+        })
+        
+     }
+     addItem(itemElement){
+        this.itemList.push({
+            name:itemElement.name,
+            quantity: itemElement.quantity,
+            price:itemElement.price
+        })
+        
+     }
      updateElememt(itemElement){
-        const item = this.getRecipe(itemElement.name)
+        const item = this.getItem(itemElement.name)
         console.log(`item found:`)
         console.log(item)
         
@@ -53,7 +88,14 @@ import { Item } from "../models/item.model";
         console.log(newquantity)
         this.itemList.push({
             name:item.name,
-            quantity: newquantity
+            quantity: newquantity,
+            price:item.price
+        })
+        this.itemHistory.push({
+            name:item.name,
+            quantity: itemElement.quantity,
+            price:item.price
+
         })
          return [...this.itemList]
        }

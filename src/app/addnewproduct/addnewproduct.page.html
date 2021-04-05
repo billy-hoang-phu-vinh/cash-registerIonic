@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>addnewproduct</ion-title>
+    <ion-buttons slot="end">
+      Save&nbsp;&nbsp;
+    </ion-buttons>
+    <ion-buttons slot="end">
+      Cancel
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form" #anyform="ngForm" (ngSubmit)="onSubmit(anyform)">
+    <ion-grid>
+        
+        <ion-row id="row">
+          <ion-col size-sm="6" >
+            <ion-item>
+              <ion-label position="floating" >
+                Product Name
+              </ion-label>
+              <ion-input type="text" name="name" required formControlName="name" ngModel>
+              </ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row id="row">
+          <ion-col size-sm="6" >
+            <ion-item>
+              <ion-label position="floating" >
+                Price
+              </ion-label>
+              <ion-input type="number" name="price" required formControlName="price" ngModel>
+              </ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row id="row">
+          <ion-col size-sm="6" >
+            <ion-item>
+              <ion-label position="floating" >
+                Quantity
+              </ion-label>
+              <ion-input type="number" name="quantity" required formControlName="quantity" ngModel>
+              </ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col  size="4" offset="2">
+              <ion-button type="submit" >
+                Restock
+              </ion-button>
+          </ion-col>
+          
+        </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
